@@ -21,6 +21,9 @@ $contasCorrentes['123.456.789-11'] = sacar($contasCorrentes['123.456.789-11'], 5
 $contasCorrentes['123.756.789-10'] = sacar($contasCorrentes['123.756.789-10'], 200);
 $contasCorrentes['123.456.789-10'] = depositar($contasCorrentes['123.456.789-10'], 900);
 
+// função 'unset' usada para excluir um indice de um array
+unset($contasCorrentes['123.756.789-10']);
+
 // Pegando a referência da contaCorrente
 titularComLetrasMaiusculas($contasCorrentes['123.456.789-10']);
 
