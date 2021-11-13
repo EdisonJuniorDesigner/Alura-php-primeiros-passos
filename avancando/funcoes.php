@@ -26,3 +26,10 @@ function depositar(array $conta, float $valorADepositar) : array
     }
     return $conta;
 }
+
+// quando utilizamos o '&' antes da '$conta' estamos querendo dizer
+// que queremos receber os valores da própria conta e não uma cópia caso
+// fosse escrito sem o '&'.
+function titularComLetrasMaiusculas(array &$conta){
+    $conta['titular'] = mb_strtoupper($conta['titular']);
+}

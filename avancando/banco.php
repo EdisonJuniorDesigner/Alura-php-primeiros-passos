@@ -19,8 +19,10 @@ $contasCorrentes = [
 
 $contasCorrentes['123.456.789-11'] = sacar($contasCorrentes['123.456.789-11'], 500);
 $contasCorrentes['123.756.789-10'] = sacar($contasCorrentes['123.756.789-10'], 200);
-
 $contasCorrentes['123.456.789-10'] = depositar($contasCorrentes['123.456.789-10'], 900);
+
+// Pegando a referência da contaCorrente
+titularComLetrasMaiusculas($contasCorrentes['123.456.789-10']);
 
 // foreach / Para cada
 foreach($contasCorrentes as $cpf => $conta){
