@@ -1,5 +1,4 @@
 <?php
-
 require_once 'funcoes.php';
 
 $contasCorrentes = [
@@ -26,12 +25,28 @@ unset($contasCorrentes['123.756.789-10']);
 
 // Pegando a referência da contaCorrente
 titularComLetrasMaiusculas($contasCorrentes['123.456.789-10']);
+?>
 
-// foreach / Para cada
-foreach($contasCorrentes as $cpf => $conta){
-    // com isso informando o list como é o indice ele irá funcionar perfeitamente
-    // agora caso não informamos ele vai atribuir o indice númerico de 0 em diante por padrão
-    // e irá dar erro
-    ['titular' => $titular, 'saldo' => $saldo] = $conta;
-    exibeMensagem("$cpf $titular $saldo");
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contas correntes</h1>
+
+    <dl>
+        <?php foreach ($contasCorrentes as $cpf => $conta){ ?>
+        <dt>
+            <h3><?= $conta['titular']; ?> - <?= $cpf; ?></h3>
+        </dt>
+        <dd>
+            Saldo: <?= $conta['saldo']; ?>
+        </dd>
+        <?php } ?>
+    </dl>
+</body>
+</html>
