@@ -26,5 +26,9 @@ titularComLetrasMaiusculas($contasCorrentes['123.456.789-10']);
 
 // foreach / Para cada
 foreach($contasCorrentes as $cpf => $conta){
-    exibeMensagem("$cpf {$conta['titular']} {$conta['saldo']}");
+    // com isso informando o list como é o indice ele irá funcionar perfeitamente
+    // agora caso não informamos ele vai atribuir o indice númerico de 0 em diante por padrão
+    // e irá dar erro
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    exibeMensagem("$cpf $titular $saldo");
 }
