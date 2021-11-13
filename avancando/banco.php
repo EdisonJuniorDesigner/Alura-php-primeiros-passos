@@ -49,5 +49,5 @@ $contasCorrentes['123.456.789-10'] = depositar($contasCorrentes['123.456.789-10'
 
 // foreach / Para cada
 foreach($contasCorrentes as $cpf => $conta){
-    exibeMensagem($cpf." ". $conta['titular']." ".$conta['saldo']);
+    exibeMensagem("$cpf {$conta['titular']} {$conta['saldo']}");
 }
